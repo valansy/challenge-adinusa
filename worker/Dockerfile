@@ -1,0 +1,24 @@
+FROM golang:1.24.2-bookworm AS dev
+
+COPY bashrc /root/.bashrc
+
+WORKDIR /app
+
+RUN go install github.com/codegangsta/gin@latest && \
+    go install github.com/go-delve/delve/cmd/dlv@latest && \
+    go install golang.org/x/tools/gopls@latest && \
+    curl -sSfL https://raw.githubusercontent.com/cosmtrek/air/master/install.sh | sh -s -- -b /usr/bin
+
+COPY go.mod ./
+RUN go mod download
+
+COPY . .
+RUN go mod tidy
+
+RUN --mount=type=cache,target=/root/.cache/go-build CGO_ENABLED=0 GOOS=linux go build -v -o /usr/local/bin/worker main.go
+
+FROM scratch
+
+COPY --from=dev /usr/local/bin/worker /usr/local/bin/worker
+
+ENTRYPOINT ["/usr/local/bin/worker"]
