@@ -24,6 +24,15 @@ Create a Kubernetes secret with the following requirement:
 
 > Replace `username` with your Adinusa username.
 
+#### 🔑 Required Variables in Secret
+
+The secret **must contain** the following keys:
+
+- `POSTGRES_USER`
+- `POSTGRES_PASSWORD`
+- `POSTGRES_HOST`
+- `POSTGRES_PORT`
+- `POSTGRES_DB`
 ---
 
 ### 3. Vote: Deployment & Service
