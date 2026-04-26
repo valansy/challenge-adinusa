@@ -106,3 +106,7 @@ Expose the **vote** and **result** applications using Kubernetes Ingress with th
   - Worker (database access is required)
   - Result (database access is required)
 - Make sure the service communication flow works correctly:
+```
+vote → kafka → worker → postgresql → result
+```
+- 
