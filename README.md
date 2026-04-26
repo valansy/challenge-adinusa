@@ -45,7 +45,7 @@ Create a **Deployment** and **Service** with the following specifications:
 - **Service name:** `username-votes-svc`
 
 #### 🖥️ Vote Application Preview
-![Vote App](images/vote.png)
+![Vote App](./vote.png)
 ---
 
 ### 4. Worker: Deployment
@@ -60,7 +60,7 @@ If the **worker** application needs database access:
 - Use the secret: `username-database-secret`
 
 #### 🖥️ Result Application Preview
-![Vote App](images/result.png)
+![Vote App](./result.png)
 ---
 
 ### 5. Result: Deployment & Service
