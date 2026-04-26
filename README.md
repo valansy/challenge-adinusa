@@ -3,12 +3,13 @@
 ## 📌 Instructions
 
 ### 1. Build & Push Images
-Build the following applications, then push them to your own Docker Hub registry:
+Build the following applications, then push them to your own registry:
 
 - `vote`
 - `worker`
 - `result`
 
+📦 **Registry:** `registry.adinusa.id`
 ---
 
 ### 2. Setup Database & Messaging
@@ -43,6 +44,8 @@ Create a **Deployment** and **Service** with the following specifications:
 - **Deployment name:** `username-votes`
 - **Service name:** `username-votes-svc`
 
+#### 🖥️ Vote Application Preview
+![Vote App](images/vote.png)
 ---
 
 ### 4. Worker: Deployment
@@ -56,6 +59,8 @@ If the **worker** application needs database access:
 
 - Use the secret: `username-database-secret`
 
+#### 🖥️ Result Application Preview
+![Vote App](images/result.png)
 ---
 
 ### 5. Result: Deployment & Service
