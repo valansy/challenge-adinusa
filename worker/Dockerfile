@@ -1,4 +1,4 @@
-FROM golang:1.24.2-bookworm AS dev
+FROM golang:1.25-bookworm AS dev
 
 COPY bashrc /root/.bashrc
 
